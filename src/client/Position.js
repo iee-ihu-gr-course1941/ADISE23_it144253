@@ -1,7 +1,6 @@
 class Position {
     constructor(x, y)
     {
-        //console.log(x,y)
         if(y || y == 0) {
         this.x = x;
         this.y = y;

@@ -49,7 +49,7 @@
 var shouldpoll= false;
         $("#create").click(() => {
             sendRequest("../api/new_lobby.php").then((data) => {
-                console.log(data);
+                
                 sessionStorage.setItem("secret", data.secret);
                 sessionStorage.setItem("code", data.code);
                 sessionStorage.setItem("playerId", data.playeridone);

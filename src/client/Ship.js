@@ -9,9 +9,6 @@ class Ship {
         var points = [];
         if(this.up) {
             if(((this.starting.y)-this.length+1) < 0 ){
-                console.log((this.starting.y)-this.length+1)
-                console.log("STARTINGY: "+this.starting.y);
-                console.log("LENGTH: "+this.length);
                 return null;
             }
 

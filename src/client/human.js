@@ -229,7 +229,7 @@ function reconnect() {
     elem("text-main").innerHTML = "Reconnect Feature priority: low"
 }
 function err(e) {
-elem("text-main").innerHTML = "Unexpected Error!<br>Check console for detailed info"
+elem("text-main").innerHTML = "Error"
 console.log(e)
 }
 
@@ -240,11 +240,11 @@ elem("confirm").onclick = function() {
         var ship = new Ship(currentselect, getShipLength(shipsToPlace), true)
         shipStart = ship;
         isUp = true;
-   ship.getPoints().forEach((point) => {
-                        //console.log(point);
+        ship.getPoints().forEach((point) => {
           elem(point.asString).innerHTML = getShipLetter(shipsToPlace);  
         })
-                elem("cancel").disabled = false
+        
+        elem("cancel").disabled = false
         elem("confirm").disabled = false
         elem("confirm").innerHTML = "Confirm";
         elem("cancel").innerHTML = "Cancel";
@@ -320,7 +320,6 @@ elem("cancel").onclick = function() {
         shipStart = ship;
         isUp = false;
    ship.getPoints().forEach((point) => {
-                        //console.log(point);
           elem(point.asString).innerHTML = getShipLetter(shipsToPlace);  
         })
         elem("cancel").disabled = false
@@ -354,7 +353,7 @@ elem("cancel").onclick = function() {
                         board = boardInfo.board;
                         boardwidth = board[0].length;
                         boardheight = board.length;
-                        console.log(boardwidth, boardheight);
+                        
                         createTable(board, false);
                         tableListener()
                             }  else {
@@ -375,7 +374,7 @@ elem("cancel").onclick = function() {
                                      board = boardInfo.board;
                         boardwidth = board[0].length;
                         boardheight = board.length;
-                        console.log(boardwidth, boardheight);
+                        
                         createTable(board, false);
                         tableListener()
                      enemyListener()
