@@ -42,14 +42,15 @@
   <body>
     <center>
       <!-- Container for content -->
+    
     <div class="container">
-      <br><br><h1>Welcome to BattleShip!</h1>  
-      <br>
-      <!-- <a href="play.php"><img src = "LogoMakr-7hm9Gd.png" height="200" width="200"></a>  -->
-      <br><br><br><br>
+      <br><br><h1>&#x2694;&nbsp;Welcome to BattleShip!&nbsp;&#x2694;</h1>  
+      
+      <img class="m-4" src = "https://www.marmaladegamestudio.com/wp-content/uploads/2020/04/game_icons_battleship_840x840.png" height="200" width="200"></img>
+      
       <!-- Button to start multiplayer game -->
       <div class="flex">
-        <button type="button" onclick="human()"class="btn btn-secondary" button>Play multiplayer!</button>
+        <button type="button" onclick="human()"class="btn btn-info" button>Engage in battles!</button>
       </div>
     </div> 
     </center>

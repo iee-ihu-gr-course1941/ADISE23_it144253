@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Battleship - Multiplayer</title>
+        <title>Battleship Game</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -16,8 +16,8 @@
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-            <div class="container">
-                <a class="navbar-brand" href="human.php">Battleship - Multiplayer</a>
+            <div class="container flex justify-content-center">
+                <a class="navbar-brand nav-title" href="human.php">&#x2694;Battleship Game&#x2694;</a>
             </div>
         </nav>
         <!-- Page content-->
@@ -35,8 +35,8 @@
             </div>
             <!-- Row for displaying player boards -->
             <div style="display: none;" class="row" id="rfow">
-                <h4 class="col">Your board</h4>
-                <h4 class="col">Enemy's board</h4>
+                <h4 class="col">Your fleet</h4>
+                <h4 class="col">Enemy's fleet</h4>
             </div>
             <br>
             <!-- Row for the game grid -->
@@ -45,6 +45,14 @@
             </div>
 
         </div>
+
+
+        <style>
+            .nav-title {
+                font-size: 40px !important;
+            }
+
+        </style>
         <!-- Bootstrap core JS-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>

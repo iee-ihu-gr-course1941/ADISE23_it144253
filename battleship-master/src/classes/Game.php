@@ -60,7 +60,7 @@ class Game {
         $this->getPlayer($this->turn)->onTurn();
     }
     public function hit(Position $pos, Player $player) {
-        // Process a hit on the opponent's board
+        // Process a hit on the enemy's board
         array_push($player->board->pointsHit, $pos);
         $enemy = $this->getPlayer($player->playerNum == 1 ? 2 : 1);
         $ship = $enemy->board->checkShip($pos);
@@ -98,7 +98,7 @@ class Game {
         else {
             // Handle a miss
             //echo "Player " . $player->playerNum . "<br>Missed " . $pos->asString . "<br>";
-            $enemy->board->setPoint($pos, "*");
+            $enemy->board->setPoint($pos, "&#9785;");
             $this->nextTurn();
         }
 

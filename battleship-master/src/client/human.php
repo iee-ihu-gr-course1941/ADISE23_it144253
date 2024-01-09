@@ -15,15 +15,15 @@
     </head>
     <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-            <div class="container">
-                <a class="navbar-brand" href="index.php">Battleship - Multiplayer</a>
+        <nav class="navbar navbar-expand-lg navbar-dark static-top">
+            <div class="flex justify-content-center container">
+                <a class="navbar-brand nav-title" href="index.php">&#x2694;Battleship Game&#x2694;</a>
             </div>
         </nav>
         <!-- Page content-->
         <div id="main" class="container">
-            <div class="text-center">
-                <h1 id="text-main"class="mt-5">Battleship Multiplayer</h1>
+            <div class="text-center battleship-message" >
+                <h1 id="text-main"class="mt-5">Multiplayer</h1>
                 <p class="lead" id="text-secondary"></p>
                 <button id="create"  type="button" class="btn btn-primary">Create Game</button>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -34,6 +34,33 @@
         
 
         <!-- Bootstrap JS and Custom Script -->
+        <style>
+            body {
+            background-image: url("https://wallpaperaccess.com/full/1486722.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            }
+            
+            #main {
+                display: flex;
+                justify-content: center;
+            }
+
+            .battleship-message {
+                margin-top: 2rem;
+                background-color: #c9d0d8;
+                padding-bottom: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                width: fit-content;
+            }
+
+            .nav-title {
+                font-size: 60px;
+            }
+
+        </style>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
       

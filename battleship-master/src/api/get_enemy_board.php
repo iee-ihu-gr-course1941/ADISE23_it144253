@@ -25,7 +25,7 @@ if($playerId) {
             $board =  $enemy->board->board;
             foreach($board as $key1=>$row) {
                 foreach($row as $key2=>$cell) {
-                    if(!($cell == " " || $cell == "X" || $cell == "*")) {
+                    if(!($cell == " " || $cell == "X" || $cell == "&#9785;")) {
                         $board[$key1][$key2] = " ";
                     }
                 }

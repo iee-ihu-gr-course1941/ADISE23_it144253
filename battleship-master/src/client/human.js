@@ -33,7 +33,9 @@ function createTable(tableData, enemy) {
     const alphabet = Array.from(Array(26)).map((e, i) => i + 65).map((x) => String.fromCharCode(x));
     var table = document.createElement('table');
 
-    table.className = "table table-bordered"
+    table.className = "table table-bordered table-dark"
+    //table.className = "table table-bordered"
+    //table.className = "table table-bordered"
     table.id = (enemy ? "enemyBoard" : "placeBoard");
     var row = {};
     var cell = {};
@@ -282,7 +284,7 @@ elem("confirm").onclick = function () {
                                     if (doneData.waitforenemy) {
                                         waitingforopponent = true;
 
-                                        $("#text-main").html("Waiting for opponent to place ships..")
+                                        $("#text-main").html("Waiting for enemy to place ships..")
                                     } else {
                                         placing = false;
                                         elem("text-main").innerHTML = ""
@@ -296,8 +298,8 @@ elem("confirm").onclick = function () {
                                                 $("#placeBoard").show();
                                                 $("#enemyBoard").appendTo("#row");
                                                 $("#placeBoard").prependTo("#row");
-                                                elem("placeBoard").className = "table table-bordered col-md-6"
-                                                elem("enemyBoard").className = "table table-bordered col-md-6"
+                                                elem("placeBoard").className = "table table-bordered table-dark col-md-6"
+                                                elem("enemyBoard").className = "table table-bordered table-dark col-md-6"
                                                 elem("rfow").style.display = "";
                                             } else {
                                                 alert(enemyBoardData.errormsg)
@@ -310,7 +312,7 @@ elem("confirm").onclick = function () {
                                 }
                             }).catch(err)
                     } else {
-                        elem("text-secondary").innerHTML = `Currently placing: ${getShipName(shipsToPlace)} (Length ${getShipLength(shipsToPlace)})<br>${shipsToPlace} more ships to go!<br><br>`;
+                        elem("text-secondary").innerHTML = `Current ship: ${getShipName(shipsToPlace)} (Length ${getShipLength(shipsToPlace)})<br>${shipsToPlace} more ships to battle!<br><br>`;
                     }
                 } else {
                     alert(placeData.errormsg);
@@ -319,7 +321,7 @@ elem("confirm").onclick = function () {
                              elem(point.asString).innerHTML = " ";  
                            })
                            shipsToPlace += 1;
-                           elem("text-secondary").innerHTML = `Currently placing: ${getShipName(shipsToPlace)} (Length ${getShipLength(shipsToPlace)})<br>${shipsToPlace} more ships to go!<br><br>`;*/
+                           elem("text-secondary").innerHTML = `Current placing: ${getShipName(shipsToPlace)} (Length ${getShipLength(shipsToPlace)})<br>${shipsToPlace} more ships to battle!<br><br>`;*/
                 }
             }).catch(err)
 
@@ -366,8 +368,8 @@ sendRequest("../api/get_board.php?id=" + gameId + "&playerId=" + playerId).then(
             shipsToPlace = boardInfo.shipsToPlace;
             if (shipsToPlace != 0) {
                 // Player still needs to place ships
-                elem("text-main").innerHTML = "Place your ships<br>"
-                elem("text-secondary").innerHTML = `Currently placing: ${getShipName(shipsToPlace)} (Length ${getShipLength(shipsToPlace)})<br>${shipsToPlace} more ships to go!<br><br>`;
+                elem("text-main").innerHTML = "Put your ships<br>"
+                elem("text-secondary").innerHTML = `Current ship: ${getShipName(shipsToPlace)} (Length ${getShipLength(shipsToPlace)})<br>${shipsToPlace} more ships to battle!<br><br>`;
                 board = boardInfo.board;
                 boardwidth = board[0].length;
                 boardheight = board.length;
@@ -376,10 +378,10 @@ sendRequest("../api/get_board.php?id=" + gameId + "&playerId=" + playerId).then(
                 // Setup event listeners for the player's board
                 tableListener()
             } else {
-                // Waiting for the opponent to place ships
+                // Waiting for the enemy to place ships
                 waitingforopponent = true;
                 $("#placeboard").hide();
-                elem("text-main").innerHTML = "waiting for opponent to place ships..."
+                elem("text-main").innerHTML = "waiting for enemy to place ships..."
             }
         } else if (boardInfo.state == 1) {
             // Game has moved to the gameplay phase
@@ -406,8 +408,8 @@ sendRequest("../api/get_board.php?id=" + gameId + "&playerId=" + playerId).then(
                     $("#placeBoard").show();
                     $("#enemyBoard").appendTo("#row");
                     $("#placeBoard").prependTo("#row");
-                    elem("placeBoard").className = "table table-bordered col-md-6"
-                    elem("enemyBoard").className = "table table-bordered col-md-6"
+                    elem("placeBoard").className = "table table-bordered table-dark col-md-6"
+                    elem("enemyBoard").className = "table table-bordered table-dark col-md-6"
                     elem("rfow").style.display = "";
 
                 }
@@ -431,7 +433,7 @@ setInterval(() => {
             if (turnData.success) {
                 // Update the UI to indicate whether it's the player's turn or the opponent's turn
                 turn = turnData.yourTurn;
-                elem("text-main").innerHTML = turn ? "Your turn!" : "Opponent's turn.."
+                elem("text-main").innerHTML = turn ? "Your turn!" : "Enemy's turn.."
             }
         })
         // Request to get the enemy's board information
@@ -482,7 +484,7 @@ setInterval(() => {
         sendRequest("../api/stats.php?id=" + gameId + "&playerId=" + playerId).then((statsData) => {
             if (statsData.success) {
                 // Update the UI with game statistics
-                elem("text-secondary").innerHTML = `${statsData.shipsSunkPlayer} of your ships have been sunk.<br>You have sunk ${statsData.shipsSunkEnemy} opponent ships!`
+                elem("text-secondary").innerHTML = `${statsData.shipsSunkPlayer} of your ships have been sunk.<br>You have sunk ${statsData.shipsSunkEnemy} enemy ships!`
                 /*
                     // Additional functionality (commented out):
                     // Color cells on the boards based on hits
@@ -514,8 +516,8 @@ setInterval(() => {
                         $("#placeBoard").show();
                         $("#enemyBoard").appendTo("#row");
                         $("#placeBoard").prependTo("#row");
-                        elem("placeBoard").className = "table table-bordered col-md-6"
-                        elem("enemyBoard").className = "table table-bordered col-md-6"
+                        elem("placeBoard").className = "table table-bordered table-dark col-md-6"
+                        elem("enemyBoard").className = "table table-bordered table-dark col-md-6"
                         elem("rfow").style.display = "";
 
                     }
@@ -523,8 +525,8 @@ setInterval(() => {
 
 
             } else {
-                // Display a message indicating the number of ships the opponent still needs to place
-                elem("text-secondary").innerHTML = `Opponent needs to place ${data.needToPlace} ships.`
+                // Display a message indicating the number of ships the enemy still needs to place
+                elem("text-secondary").innerHTML = `Enemy needs to place ${data.needToPlace} ships.`
 
             }
         })
