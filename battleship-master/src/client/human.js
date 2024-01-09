@@ -210,7 +210,7 @@ function enemyCellClick(pos) {
                                 elem(pos.asString + "e").innerHTML = "⌛"
                                 serverResponded = false;
                             } else {
-                                // alert(hitData.errormsg)
+                                
                             }
                         }).catch(err)
                 }
@@ -315,13 +315,7 @@ elem("confirm").onclick = function () {
                         elem("text-secondary").innerHTML = `Current ship: ${getShipName(shipsToPlace)} (Length ${getShipLength(shipsToPlace)})<br>${shipsToPlace} more ships to battle!<br><br>`;
                     }
                 } else {
-                    alert(placeData.errormsg);
-                    /*          shipStart.getPoints().forEach((point) => {
-                                           //consofle.log(point);
-                             elem(point.asString).innerHTML = " ";  
-                           })
-                           shipsToPlace += 1;
-                           elem("text-secondary").innerHTML = `Current placing: ${getShipName(shipsToPlace)} (Length ${getShipLength(shipsToPlace)})<br>${shipsToPlace} more ships to battle!<br><br>`;*/
+                    alert(placeData.errormsg);      
                 }
             }).catch(err)
 
@@ -485,12 +479,7 @@ setInterval(() => {
             if (statsData.success) {
                 // Update the UI with game statistics
                 elem("text-secondary").innerHTML = `${statsData.shipsSunkPlayer} of your ships have been sunk.<br>You have sunk ${statsData.shipsSunkEnemy} enemy ships!`
-                /*
-                    // Additional functionality (commented out):
-                    // Color cells on the boards based on hits
-                    colorCells(statsData.pointsHitEnemy, false);
-                    colorCells(statsData.pointsHitPlayer, true);
-                    */
+               
             }
         })
     }

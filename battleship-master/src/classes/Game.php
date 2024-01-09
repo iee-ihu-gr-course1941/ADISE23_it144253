@@ -64,23 +64,23 @@ class Game {
         array_push($player->board->pointsHit, $pos);
         $enemy = $this->getPlayer($player->playerNum == 1 ? 2 : 1);
         $ship = $enemy->board->checkShip($pos);
-        //  var_dump($ship);
-        //echo "<br>";
+        
+        
         if ($ship) {
             // Handle hit on a ship
             if (in_array($pos, $ship->pointsHit)) {
-              //  echo "Player " . $player->playerNum . "<br>ALREADY HIT " . $pos->asString . "<br>";
+              
                 $this->nextTurn();
             }
             else {
-                //echo "Player " . $player->playerNum . "<br>HIT " . $pos->asString . "<br>";
+                
                 $enemy->board->setPoint($pos, "X");
                 array_push($ship->pointsHit, $pos);
                 if ($ship->isAllPointsHit()) {
                     $ship->sunk = true;
-                   // echo "SHIP SUNK! <br>";
+                   
                     if ($enemy->board->isAllShipsSunk()) {
-//                        echo "Player " . $player->playerNum . " WON!!! ";
+
 
                         $this->state = 2;
                         $this->winner = $player;
@@ -97,7 +97,7 @@ class Game {
         }
         else {
             // Handle a miss
-            //echo "Player " . $player->playerNum . "<br>Missed " . $pos->asString . "<br>";
+            
             $enemy->board->setPoint($pos, "&#9785;");
             $this->nextTurn();
         }
@@ -105,7 +105,7 @@ class Game {
     }
     public function donePlacing(Player $player) {
         // Check if both players are done placing, then start the game
-        //echo strval($player->playerNum);
+        
         if ($player->playerNum == 1) {
             if ($this->player2->donePlacing) {
                 $this->state = 1;

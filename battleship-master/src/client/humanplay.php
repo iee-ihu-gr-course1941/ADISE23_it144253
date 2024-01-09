@@ -27,11 +27,6 @@
                 <p class="lead" id="text-secondary"></p>
                 <button id="confirm" style="display: none;" type="button" class="btn btn-secondary"></button>
                 <button id="cancel" style="display: none;" type="button" class="btn btn-secondary"></button>
-            <!--    <ul class="list-unstyled">
-                    <li>Bootstrap 4.6.0</li>
-                    <li>jQuery 3.5.1</li>
-                    </ul>
-            -->
             </div>
             <!-- Row for displaying player boards -->
             <div style="display: none;" class="row" id="rfow">
