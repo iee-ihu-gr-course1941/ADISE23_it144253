@@ -26,7 +26,7 @@
                 <h1 id="text-main"class="mt-5">Battleship Multiplayer</h1>
                 <p class="lead" id="text-secondary"></p>
                 <button id="create"  type="button" class="btn btn-primary">Create Game</button>
-                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button id="join"  type="button" class="btn btn-secondary">Join Game</button>
             </div>
 

@@ -221,7 +221,7 @@ function updateEnemyBoard(arr) {
     arr.forEach(function (row, ir) {
         row.forEach(function (cell, ic) {
             theElem = elem(new Position(ic, ir).asString + "e");
-            theElem.innerHTML = (cell == "X" ? "💥" : cell);
+            theElem.innerHTML = (cell == "X" ? "&#x2714;" : cell);
             if (cell == "X") theElem.style.backgroundColor = "lime";
         })
     })
@@ -231,7 +231,7 @@ function updateBoard(arr) {
     arr.forEach(function (row, ir) {
         row.forEach(function (cell, ic) {
             theElem = elem(new Position(ic, ir).asString)
-            theElem.innerHTML = (cell == "X" ? "💥" : cell);
+            theElem.innerHTML = (cell == "X" ? "&#10006;" : cell);
             if (cell == "X") theElem.style.backgroundColor = "red";
         })
     })
