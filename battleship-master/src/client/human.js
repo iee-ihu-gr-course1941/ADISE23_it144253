@@ -469,10 +469,10 @@ setInterval(() => {
                     // Update UI to show the game result (win or lose)
                     if (stateData.win) {
                         //ez
-                        elem("text-main").innerHTML = "You won! Congrats!"
+                        elem("text-main").innerHTML = "Victory! Congratulations!"
                     } else {
                         //f'
-                        elem("text-main").innerHTML = "You lost! Better luck next time-"
+                        elem("text-main").innerHTML = "Defeat! Take your sunk ships and go away!"
                     }
                 }
             } else {

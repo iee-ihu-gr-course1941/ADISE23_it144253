@@ -56,6 +56,14 @@
     </center>
   
     <!-- JavaScript function to navigate to the multiplayer page -->
+    <style>
+        body {
+        background-image: url("https://wallpapercave.com/wp/wp3176629.jpg");
+        /*background-color: lightblue;*/
+        background-repeat: no-repeat;
+        background-size: cover;
+            }
+    </style>
     <script>
       function human() {
         location.href = "human.php"
